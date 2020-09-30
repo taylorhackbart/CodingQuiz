@@ -81,7 +81,7 @@ button4.addEventListener("click", function() {
 //first question
 function displayQuestion() {
     document.querySelector(".title").innerHTML =
-    questionsArr[questionIndex].question;
+    questionsArr[questionIndex];
 
     button1.innerHTML =
     questionsArr[questionIndex].choices[0];
@@ -111,15 +111,13 @@ function correct(){
 // or incorrect subtract time
 
 
-//another question, another function lol
-
 // all q answered or time = 0, game over
 
 // prompt to initial and score
 
 // if the time runs out, or you've answered all the questions, game over
 function end(){
-if (timeLeft === 0 || displayQuestion === 4) {
+if (timeLeft === 0 || displayQuestion === questionsArr[3]) {
   clearInterval(countdown);
   // enter initials for scoreboard
   prompt("Enter initials to be added to the scoreboard!");
