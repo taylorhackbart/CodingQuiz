@@ -1,0 +1,23 @@
+header.container {
+    margin: 80px;
+}
+
+.high-scores {
+    position: fixed;
+}
+
+p {
+    text-align: center;
+}
+
+.countdown {
+    text-align: right;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.two {
+    margin: 100px;
+}
