@@ -2,9 +2,6 @@ header.container {
     margin: 80px;
 }
 
-.high-scores {
-    position: fixed;
-}
 
 p {
     text-align: center;
@@ -20,4 +17,8 @@ p {
 
 .two {
     margin: 100px;
+}
+
+h1, h2 {
+    text-align: center;
 }

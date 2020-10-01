@@ -9,12 +9,28 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Results -->
+  <header id="results" style="display:none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Results!</h1>
+                <h2>Here are the top three:</h2>
+            </div>
+            <div class="row">
+                <div class="col-6" id="initials">
+                    <div class="col-6" id="score">
 
-  <div id="high-scores">
-    <a href=#>View High Scores!</a>     
-  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  <header class="container">
+
+<!-- Start Button and quiz directions -->
+  <header class="container header">
     <div class="row">
       <div class= "col-12">
        <button type="button" id ="start" class="btn btn-primary btn-lg btn-block"> START QUIZ </button> <br>
@@ -26,50 +42,44 @@
        </p>
       </div>
     </div>
-  </header>
+</header>
 
-
-
-  <div class= "container count">
+<!-- Timer countdown-->
+  <div class= "container">
     <div class="row">
       <div class= "col-12">
         <h2 class="countdown"></h2>
     </div>
    </div>
-  </div>
- <div class= "container questions" style="display:none;">
-  <div class="row">
+   <div class="row">
     <div class= "col-12">
-    <h2 class="title"> Question:  </h2>
-        <button type="button" id ="button1" class="btn btn-secondary">A</button>
-      </div>
+      <div class="quiz-elements">
+        <h2 id="question"> </h2>
+        <ul id="answer"> </ul>
+        <p id="message"> </p>
+        <p id="current-score"></p>
+     </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <button type="button" id= "button2"class="btn btn-secondary">B</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <button type="button" id="button3" class="btn btn-secondary">C</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <button type="button" id="button4" class="btn btn-secondary">D</button>
-      </div>
-    </div>
+   </div>
   </div>
 
-</div>
+  <!-- Results -->
+  <div id="results" style="display:none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Results</h1>
+            </div>
+            <div class="row">
+                <div class="col-6" id="initials">
+                    <div class="col-6" id="score">
 
-
-
-
-
-
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
