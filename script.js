@@ -1,3 +1,7 @@
+// leadboard pops up twice
+//try to stop the time beforehand
+//try to get the initials there 
+
 // variables
 var highscore = document.getElementById("high-scores"); //high score link
 var start = document.getElementById("start"); //only the button
@@ -57,7 +61,7 @@ function startCountdown() {
     timeLeft--;
     displayCount.textContent = timeLeft + " seconds left";
 
-    if (timeLeft === 0 || questionIndex === 4) {
+    if (timeLeft === 0) {
       clearInterval(countdown);
       timeLeft.textContent = "Finished!";
       scoreFinal();
@@ -66,8 +70,13 @@ function startCountdown() {
 }
 
 function startingQuestions() {
-  questionId.textContent = "Question: " + questionsArr[questionIndex].question;
-  startingChoices(questionIndex);
+  console.log(questionIndex)
+  if (questionIndex === (questionsArr.length)){
+    scoreFinal();
+  } else {
+    questionId.textContent = "Question: " + questionsArr[questionIndex].question;
+    startingChoices(questionIndex);
+  }
 }
 
 function startingChoices(questionIndex) {
@@ -111,11 +120,13 @@ function checkAnswer(e) {
     message.textContent = "Incorrect!";
     timeLeft -= 5;
   }
-  if (userAnswer) {
+
+  if (userAnswer) {    
     questionIndex++;
+    console.log(questionIndex);
     currentScore.textContent = "Current score: " + score;
     startingQuestions();
-  }
+  }  
 }
 
 function scoreFinal() {
