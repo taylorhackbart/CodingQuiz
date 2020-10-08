@@ -1,6 +1,6 @@
 // leadboard pops up twice
 //try to stop the time beforehand
-//try to get the initials there 
+//try to get the initials there
 
 // variables
 var highscore = document.getElementById("high-scores"); //high score link
@@ -23,26 +23,36 @@ var letter = ["A) ", "B) ", "C) ", "D) "];
 var leaderboard = [];
 //questions array
 var questionsArr = [
-    {
+  {
     question: " Where does the script.js link go in your html doc? ",
-    choices: ["in the head","it doesn't go in the html doc", "after closing body tag","above closing body tag"],
+    choices: [
+      "in the head",
+      "it doesn't go in the html doc",
+      "after closing body tag",
+      "above closing body tag",
+    ],
     answer: "above closing body tag",
-    },
-    {
+  },
+  {
     question: " Where do we push our homeworks to (not submitting)? ",
-    choices: [" Gitlab ", "GitHub", "Bootstrap", "They magically appear in a webpage!"],
+    choices: [
+      " Gitlab ",
+      "GitHub",
+      "Bootstrap",
+      "They magically appear in a webpage!",
+    ],
     answer: "GitHub",
-    },
-    {
+  },
+  {
     question: " Which is used to make a list? ",
     choices: ["array", "string", "boolean", "function"],
     answer: "array",
-    },
-    {
+  },
+  {
     question: " How to customize and add styles to your webpage?",
     choices: ["HTML", "CSS", "JavaScript", "pray"],
     answer: "CSS",
-    },
+  },
 ];
 
 // Start button
@@ -70,11 +80,12 @@ function startCountdown() {
 }
 
 function startingQuestions() {
-  console.log(questionIndex)
-  if (questionIndex === (questionsArr.length)){
+  console.log(questionIndex);
+  if (questionIndex === questionsArr.length) {
     scoreFinal();
   } else {
-    questionId.textContent = "Question: " + questionsArr[questionIndex].question;
+    questionId.textContent =
+      "Question: " + questionsArr[questionIndex].question;
     startingChoices(questionIndex);
   }
 }
@@ -121,12 +132,12 @@ function checkAnswer(e) {
     timeLeft -= 5;
   }
 
-  if (userAnswer) {    
+  if (userAnswer) {
     questionIndex++;
     console.log(questionIndex);
     currentScore.textContent = "Current score: " + score;
     startingQuestions();
-  }  
+  }
 }
 
 function scoreFinal() {
@@ -167,16 +178,16 @@ function scoreFinal() {
   ul.classList.add("topThree");
   var liOne = document.createElement("li");
   liOne.textContent =
-    leaderboard[0]["player"] + " " + leaderboard[0]["playerScore"];
+    leaderboard[0].player + " " + leaderboard[0]["playerScore"];
   var liTwo = document.createElement("li");
   liTwo.textContent =
-    leaderboard[1]["player"] + " " + leaderboard[1]["playerScore"];
+    leaderboard[1].player + " " + leaderboard[1]["playerScore"];
   ul.appendChild(liOne);
   ul.appendChild(liTwo);
   if (leaderboard[2] != null) {
     var liThree = document.createElement("li");
     liThree.textContent =
-      leaderboard[2]["player"] + " " + leaderboard[2]["playerScore"];
+      leaderboard[2].player + " " + leaderboard[2]["playerScore"];
     ul.appendChild(liThree);
   }
 
